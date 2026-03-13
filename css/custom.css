@@ -14,8 +14,8 @@
 }
 
 body {
-    background-image: url('../images/17MILLIONPOUNDMARIJUANABRICK.png'); /* AJUSTE A EXTENSÃO */
-    background-size: cover;      /* Faz a imagem cobrir toda a tela */
+    background-image: url('../images/nihau.jpg'); /* AJUSTE A EXTENSÃO */
+    background-size: 100% 100%;      /* Faz a imagem cobrir toda a tela */
     background-position: center; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Não repete a imagem */
     background-attachment: fixed; /* Imagem fixa ao rolar a página */

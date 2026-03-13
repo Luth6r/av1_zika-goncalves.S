@@ -48,13 +48,25 @@ function adicionarTarefaNaTela(tarefa, index) {
     novaTarefa.innerHTML = `
         <input type="checkbox" class="checkbox-tarefa" data-index="${index}" ${tarefa.concluida ? 'checked' : ''}>
         <span class="${tarefa.concluida ? 'tarefa-concluida' : ''}">${tarefa.texto}</span>
-        <button class="excluir" data-index="${index}">Excluir</button>`;
+        <button class="editar" data-index="${index}">Editar</button>
+        <button class="excluir" data-index="${index}">Excluir</button>`; 
     const checkbox = novaTarefa.querySelector('.checkbox-tarefa');
     checkbox.addEventListener('change', function(e) {
         const i = e.target.dataset.index;
         tarefas[i].concluida = e.target.checked;
         renderTarefas();
         salvarTarefas();}); 
+    const botaoEditar = novaTarefa.querySelector('.editar');
+        botaoEditar.addEventListener('click', function(e) {
+    const i = e.target.dataset.index;
+    const novoTexto = prompt("Edite sua tarefa:", tarefas[i].texto);
+    if (novoTexto !== null && novoTexto.trim() !== "") {
+        tarefas[i].texto = novoTexto;
+        renderTarefas();
+        salvarTarefas();
+    }
+});
+
     listaTarefas.appendChild(novaTarefa);}
 
 
